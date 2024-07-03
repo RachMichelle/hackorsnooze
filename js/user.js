@@ -119,8 +119,6 @@ function updateUIOnUserLogin() {
 
 // **Handle user favorites
 
-// *** NEED TO ADD FAVS FAVORITES PAGE ***
-
 async function toggleFavorite(evt) {
   const user = currentUser.username;
   const token = currentUser.loginToken;
@@ -159,6 +157,7 @@ async function putFavoritesOnPage() {
     }
     $allStoriesList.append($story);
     $story.prepend('<i class="fa-solid fa-heart fav-icon"></i>')
+    $story.append($('<hr class="breakpoint">'))
   }
   $storiesLoadingMsg.hide();
   $allStoriesList.show();
@@ -206,6 +205,7 @@ async function putMyStoriesOnPage() {
         $story.prepend('<i class="fa-regular fa-heart fav-icon"></i>')
       }
     }
+    $story.append($('<hr class="breakpoint">'))
   }
   $allStoriesList.show();
 }
